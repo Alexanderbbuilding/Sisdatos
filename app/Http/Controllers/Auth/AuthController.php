@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Minminer_app\Http\Controllers\Auth;
 
-use App\User;
+use Minminer_app\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use Minminer_app\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

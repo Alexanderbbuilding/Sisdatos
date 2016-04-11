@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Minminer_app\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use Minminer_app\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

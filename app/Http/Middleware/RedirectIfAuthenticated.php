@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Minminer_app\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

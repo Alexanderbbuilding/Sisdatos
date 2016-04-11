@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Minminer_app;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Minminer_app\Events;
 
 abstract class Event
 {

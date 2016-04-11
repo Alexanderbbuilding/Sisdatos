@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Minminer_app\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
