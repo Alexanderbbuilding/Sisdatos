@@ -14,7 +14,13 @@ class CreateFsisTable extends Migration
     {
         Schema::create('fsis', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('muestra_id')->unsigned();
+            $table->string('analista',50);
+            $table->double('indice_promedio', 15, 8);
+            $table->string('observacion');
             $table->timestamps();
+
+            $table->foreign('muestra_id')->references('id')->on('samples');
         });
     }
 

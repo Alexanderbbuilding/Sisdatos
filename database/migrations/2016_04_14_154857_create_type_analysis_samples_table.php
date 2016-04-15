@@ -13,8 +13,13 @@ class CreateTypeAnalysisSamplesTable extends Migration
     public function up()
     {
         Schema::create('type_analysis_samples', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('tipo_analisis_id')->unsigned();
+            $table->integer('muestra_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('tipo_analisis_id')->references('id')->on('analysis_types');
+            $table->foreign('muestra_id')->references('id')->on('samples');
+
         });
     }
 

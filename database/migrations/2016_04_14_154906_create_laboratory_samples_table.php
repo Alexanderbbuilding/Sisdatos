@@ -14,7 +14,12 @@ class CreateLaboratorySamplesTable extends Migration
     {
         Schema::create('laboratory_samples', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('muestra_id')->unsigned();
+            $table->integer('laboratorios_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('muestra_id')->references('id')->on('samples');
+            $table->foreign('laboratorios_id')->references('id')->on('laboratories');
         });
     }
 

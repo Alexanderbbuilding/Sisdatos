@@ -14,7 +14,13 @@ class CreateAdlPesosTable extends Migration
     {
         Schema::create('adl_pesos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('adl_id')->unsigned();
+            $table->double('peso', 15, 8);
+            $table->double('por_per_hum', 15, 8);
+            $table->string('hora_minutos',10);
             $table->timestamps();
+
+            $table->foreign('adl_id')->references('id')->on('adls');
         });
     }
 
