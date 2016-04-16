@@ -17,7 +17,7 @@ class CreateFsisTable extends Migration
             $table->integer('muestra_id')->unsigned();
             $table->string('analista',50);
             $table->double('indice_promedio', 15, 8);
-            $table->string('observacion');
+            $table->string('observacion')->nullable();
             $table->timestamps();
 
             $table->foreign('muestra_id')->references('id')->on('samples');

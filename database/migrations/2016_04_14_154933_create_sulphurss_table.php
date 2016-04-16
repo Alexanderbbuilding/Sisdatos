@@ -15,8 +15,8 @@ class CreateSulphurssTable extends Migration
         Schema::create('sulphurs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('muestra_id')->unsigned();
-            $table->double('azufre1', 15, 8);
-            $table->double('azufre2', 15, 8);
+            $table->double('azufre1', 15, 8)->nullable();
+            $table->double('azufre2', 15, 8)->nullable();
             $table->double('promedio_azufre', 15, 8);
             $table->double('repetibilidad_azufre', 15, 8);
             $table->double('limite_rep_azufre', 15, 8);

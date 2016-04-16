@@ -18,6 +18,8 @@ class CreatePeoplesTable extends Migration
             $table->string('nombres',100);
             $table->string('apellidos',100);
             $table->string('direccion',100);
+            $table->string('telefono',50)->nullable();
+            $table->string('email',100)->nullable();
             $table->timestamps();
 
             $table->foreign('tipo_documento_id')->references('id')->on('document_types');

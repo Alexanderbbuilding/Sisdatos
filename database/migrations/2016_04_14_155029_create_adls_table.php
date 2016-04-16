@@ -19,14 +19,14 @@ class CreateAdlsTable extends Migration
             $table->double('peso_muestra', 10, 1);
             $table->double('humedad_muestra', 15, 8);
             $table->double('total_peso_humedad', 10, 1);
-            $table->double('peso_final', 15, 8);
-            $table->double('adl_porcentaje', 15, 8);
-            $table->double('humedad_residual', 15, 8);
-            $table->double('resultado_humedad', 15, 8);
-            $table->double('peso_final_p', 15, 8);
-            $table->double('adl_porcentaje_p', 15, 8);
-            $table->double('humedad_residual_p', 15, 8);
-            $table->double('resultado_humedad_p', 15, 8);
+            $table->double('peso_final', 15, 8)->nullable();
+            $table->double('adl_porcentaje', 15, 8)->nullable();
+            $table->double('humedad_residual', 15, 8)->nullable();
+            $table->double('resultado_humedad', 15, 8)->nullable();
+            $table->double('peso_final_p', 15, 8)->nullable();
+            $table->double('adl_porcentaje_p', 15, 8)->nullable();
+            $table->double('humedad_residual_p', 15, 8)->nullable();
+            $table->double('resultado_humedad_p', 15, 8)->nullable();
             $table->string('analista',100);
             $table->timestamps();
 

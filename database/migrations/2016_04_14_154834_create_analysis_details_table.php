@@ -16,12 +16,13 @@ class CreateAnalysisDetailsTable extends Migration
             $table->increments('id');
             $table->integer('tipo_analisis_id')->unsigned();
             $table->integer('norma_id')->unsigned();
+            $table->integer('unidad_id')->unsigned();
             $table->string('descripcion',100);
-            $table->string('unidad',5);
             $table->timestamps();
 
             $table->foreign('tipo_analisis_id')->references('id')->on('analysis_types');
             $table->foreign('norma_id')->references('id')->on('rules');
+            $table->foreign('unidad_id')->references('id')->on('units');
         });
     }
 

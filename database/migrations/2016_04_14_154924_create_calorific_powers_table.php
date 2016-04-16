@@ -17,7 +17,7 @@ class CreateCalorificPowersTable extends Migration
             $table->integer('muestra_id')->unsigned();
             $table->double('qvad1', 15, 8);
             $table->double('qvad2', 15, 8);
-            $table->string('analista',100);
+            $table->string('analista',100)->nullable();
             $table->timestamps();
 
             $table->foreign('muestra_id')->references('id')->on('samples');
