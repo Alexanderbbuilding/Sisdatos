@@ -147,7 +147,10 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        /*
+        * Colective forms y html
+         */
+        Collective\Html\HtmlServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -155,7 +158,6 @@ return [
         Minminer_app\Providers\AuthServiceProvider::class,
         Minminer_app\Providers\EventServiceProvider::class,
         Minminer_app\Providers\RouteServiceProvider::class,
-
     ],
 
     /*
@@ -201,6 +203,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        /*
+        * Colective Form y Html
+         */
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 
