@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('secciones_estratograficas','StratigraphicSectionsController');
+Route::resource('tipo_documento','DocumentTypesController');
+Route::resource('tipo_carbon','CoalTypesController');
+Route::resource('manto','MantlesController');
+Route::resource('laboratorios','LaboratoriesController');
+Route::resource('normas','RulesController');
+Route::resource('plantas','PlantsController');
+Route::resource('parametros_desarrollo','ParametersController');

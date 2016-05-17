@@ -4,8 +4,14 @@ namespace Minminer_app\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Minminer_app\Http\Requests;
+//use Minminer_app\Http\Requests;
 
+use Illuminate\Support\Facades\Validator;
+
+use Minminer_app\Models\StratigraphicSection;
+
+//Importar la clase requests para las validaciones
+use Minminer_app\Http\Requests\StratigraphicSectionsFormRequest;
 class StratigraphicSectionsController extends Controller
 {
     /**
@@ -16,6 +22,8 @@ class StratigraphicSectionsController extends Controller
     public function index()
     {
         //
+        $stratigraphic_sections=StratigraphicSection::all();
+        return view('stratigraphic_sections.index',compact('stratigraphic_sections'));
     }
 
     /**
@@ -25,7 +33,7 @@ class StratigraphicSectionsController extends Controller
      */
     public function create()
     {
-        //
+        return view('stratigraphic_sections.create');
     }
 
     /**
@@ -34,9 +42,15 @@ class StratigraphicSectionsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StratigraphicSectionsFormRequest $request)
     {
-        //
+        //$this->validate($request,$rules);
+        $nueva_seccion = new StratigraphicSection;
+        $nueva_seccion->fill($request->all());
+        $nueva_seccion->save();
+        $request->session()->flash('bien', 'Sección creada correctamente.');
+        //return redirect()->back();
+        return redirect('secciones_estratograficas');
     }
 
     /**
@@ -47,7 +61,8 @@ class StratigraphicSectionsController extends Controller
      */
     public function show($id)
     {
-        //
+        $stratigraphic_sections=StratigraphicSection::find($id);
+        return view('stratigraphic_sections.show',compact('stratigraphic_sections'));
     }
 
     /**
@@ -58,7 +73,8 @@ class StratigraphicSectionsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $stratigraphic_sections=StratigraphicSection::find($id);
+        return view('stratigraphic_sections.edit',compact('stratigraphic_sections'));
     }
 
     /**
@@ -68,9 +84,15 @@ class StratigraphicSectionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StratigraphicSectionsFormRequest $request, $id)
     {
-        //
+          $seccionUpdate=$request->all();
+          $seccion=StratigraphicSection::find($id);
+          $seccion->update($seccionUpdate);
+          
+         
+         //$book->update($bookUpdate);
+         return redirect('secciones_estratograficas');
     }
 
     /**
@@ -81,6 +103,7 @@ class StratigraphicSectionsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        StratigraphicSection::find($id)->delete();
+         return redirect('secciones_estratograficas');
     }
 }

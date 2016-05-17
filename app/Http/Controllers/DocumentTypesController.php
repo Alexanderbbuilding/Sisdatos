@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use Minminer_app\Http\Requests;
 
+use Illuminate\Support\Facades\Validator;
+
+use Minminer_app\Models\DocumentType;
+
 class DocumentTypesController extends Controller
 {
     /**
@@ -16,6 +20,8 @@ class DocumentTypesController extends Controller
     public function index()
     {
         //
+         $document_types=DocumentType::all();
+        return view('document_types.index',compact('document_types'));
     }
 
     /**
